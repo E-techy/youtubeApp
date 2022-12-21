@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube</title>
+    <link rel="shortcut icon" href="/youtube.png" type="image/x-icon">
+</head>
+<link rel="stylesheet" href="homepage.css">
+<body>
+  <div class="main" id="main">
+    <div class="menu" id="menu">
+        <ul id="menuUl">
+            <li onclick="location.href='/'">Home</li>
+            <li>Videos</li>
+            <li id="uploadVideos">Upload Videos
+            </li>
+            <li>SignUp</li>
+            <li>Settings  
+            </li>
+        </ul>
+        <h1 id="openMenu">></h1>
+    </div>
+    <div class="menuBar" id="menuBar">
+        <div class="searchBar">
+            <form id="searchForm" style="width:60vw; display:inline-block ;">
+            <input type="text" placeholder="Search Here" name="searchQuery" id="searchQuery">
+            <button type="submit" id="searchButton">Search</button>
+            </form>
+            <h1>Aman</h1>
+        </div>
+    </div>
+   <div class="videosList" id="videosList">
+
+
+   </div>
+
+  </div>
+  <!-- /* Receiving Data from the Server in the String format */ -->
+  <div id="videoDataFromServer" style="display:none;"><%=videoDataFromServer %> </div>
+  <div id="uploadMenu" style="display:none;">
+        <form id="videoUploadingForm">
+            <label for="fileToUpload">Select file</label>
+            <input type="file" name="fileToUpload" id="fileToUpload" accept="video/*">
+            <label for="videoTitle">Video Title</label><br>
+            <input type="text" id="videoTitle" name="videoTitle" maxlength="50" placeholder="Enter your video title" required>
+            <br>
+            <label for="videoDescription">Video Description</label><br>
+            <textarea type="text" id="videoDescription" name="videoDescription" maxlength="1000" placeholder="Enter your video description here" required></textarea>
+            <br>
+            <label for="videoCategory">Video Category</label><br>
+            <input type="text" id="videoCategory" name="videoCategory" maxlength="100" placeholder="Separate categories with comma" required>
+            <br><br>
+            <label>Select audience</label><br>
+            <div style="display:inline-block ;">
+            <label for="children" style="display:flex ;">Children</label>
+            <input type="radio" id="children" name="audience" value="children" required></div><br>
+            <div style="display:inline-block ;">
+            <label for="everyone" style="display: flex;">Everyone</label>
+            <input type="radio" id="everyone" name="audience" value="everyone" required ></div>
+            <div class="btn" style="display:inline-block ;"><br><br>
+            <button id="closeUploadMenu" type="reset">Cancel</button>
+            <button type="submit" style="float:right;" id="uploadToServerButton">Submit</button>
+            </div>
+            
+        </form>
+        <div id="uploadingAnimation" style="display:none;">
+            <div id="curtain"></div>
+            <h1 id="uploadingAnimationText">Uploading...</h1>
+        </div>
+  </div>
+
+</body>
+<script src="homepage.js"></script>
+</html>
